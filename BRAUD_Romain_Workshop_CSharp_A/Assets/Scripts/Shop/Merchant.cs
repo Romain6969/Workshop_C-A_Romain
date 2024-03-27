@@ -17,7 +17,7 @@ public class Merchant : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.R))
             {
                 _shopImage.SetActive(true);
             }

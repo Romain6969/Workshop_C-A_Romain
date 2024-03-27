@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class BuySlowSeed : MonoBehaviour
 {
-    private SeedMain _seedMain;
-    private Inventory _inventory;
-    private Money _money;
+    [SerializeField] private SeedMain _seedMain;
+    [SerializeField] private Inventory _inventory;
+    [SerializeField] private Money _money;
 
     public void BuySlow()
     {

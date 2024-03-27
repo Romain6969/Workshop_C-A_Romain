@@ -1,62 +1,147 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GrowPlants : MonoBehaviour
 {
-    private SeedMain _seedMain;
-    private Dirt _dirt;
-    private InventoryPlants _inventoryPlants;
-    private float _growTime;
+    [SerializeField] private SeedMain _seedMain;
+    [SerializeField] private Dirt _dirt;
+    [SerializeField] private InventoryPlants _inventoryPlants;
+    [SerializeField] private TMP_Text _timeText;
+    [SerializeField] private GameObject _activatetime;
+    private float _normalGrowTime;
+    private float _fastGrowTime;
+    private float _slowGrowTime;
+    private float _moneyGrowTime;
+
+    private void Start()
+    {
+        _normalGrowTime = _seedMain.NormalSeed.GrowTime;
+        _fastGrowTime = _seedMain.FastSeed.GrowTime;
+        _slowGrowTime = _seedMain.SlowSeed.GrowTime;
+        _moneyGrowTime = _seedMain.MoneySeed.GrowTime;
+        _activatetime.SetActive(false);
+    }
 
     private void FixedUpdate()
     {
         if (_dirt._normalSeedPlaced == true)
         {
-            _growTime += Time.deltaTime;
+            _activatetime.SetActive(true);
+            _normalGrowTime -= Time.deltaTime;
 
-            if (_growTime >= _seedMain.NormalSeed.GrowTime)
+            switch (_normalGrowTime)
             {
-                _inventoryPlants.NumberNormalPlants += 1;
-                _growTime = 0;
-                Destroy(gameObject);
-                _dirt._normalSeedPlaced = false;
+                case > 0:
+                    float min = Mathf.FloorToInt(_normalGrowTime / 60);
+                    float sec = Mathf.FloorToInt(_normalGrowTime % 60);
+                    if (sec < 10)
+                    {
+                        _timeText.text = ($"0{min} : 0{sec}");
+                        return;
+                    }
+                    else
+                    {
+                        _timeText.text = ($"0{min} : {sec}");
+                    }
+                    break;
+                case <= 0:
+                    _timeText.text = "Ready !";
+                    _inventoryPlants.NumberNormalPlants += 1;
+                    _normalGrowTime = _seedMain.NormalSeed.GrowTime;
+                    Destroy(GameObject.Find("NormalSeed(Clone)"));
+                    _activatetime.SetActive(false);
+                    _dirt._normalSeedPlaced = false;
+                    break;
             }
         }
         else if (_dirt._fastSeedPlaced == true)
         {
-            _growTime += Time.deltaTime;
+            _activatetime.SetActive(true);
+            _fastGrowTime -= Time.deltaTime;
 
-            if (_growTime >= _seedMain.FastSeed.GrowTime)
+            switch (_fastGrowTime)
             {
-                _inventoryPlants.NumberFastPlants += 1;
-                _growTime = 0;
-                Destroy(gameObject);
-                _dirt._fastSeedPlaced = false;
+                case > 0:
+                    float min = Mathf.FloorToInt(_fastGrowTime / 60);
+                    float sec = Mathf.FloorToInt(_fastGrowTime % 60);
+                    if (sec < 10)
+                    {
+                        _timeText.text = ($"0{min} : 0{sec}");
+                        return;
+                    }
+                    else
+                    {
+                        _timeText.text = ($"0{min} : {sec}");
+                    }
+                    break;
+                case <= 0:
+                    _timeText.text = "Ready !";
+                    _inventoryPlants.NumberFastPlants += 1;
+                    _fastGrowTime = _seedMain.FastSeed.GrowTime;
+                    Destroy(GameObject.Find("FastSeed(Clone)"));
+                    _activatetime.SetActive(false);
+                    _dirt._fastSeedPlaced = false;
+                    break;
             }
         }
         else if (_dirt._slowSeedPlaced == true)
         {
-            _growTime += Time.deltaTime;
+            _activatetime.SetActive(true);
+            _slowGrowTime -= Time.deltaTime;
 
-            if (_growTime >= _seedMain.SlowSeed.GrowTime)
+            switch (_slowGrowTime)
             {
-                _inventoryPlants.NumberSlowPlants += 1;
-                _growTime = 0;
-                Destroy(gameObject);
-                _dirt._slowSeedPlaced = false;
+                case > 0:
+                    float min = Mathf.FloorToInt(_slowGrowTime / 60);
+                    float sec = Mathf.FloorToInt(_slowGrowTime % 60);
+                    if (sec < 10)
+                    {
+                        _timeText.text = ($"0{min} : 0{sec}");
+                        return;
+                    }
+                    else
+                    {
+                        _timeText.text = ($"0{min} : {sec}");
+                    }
+                    break;
+                case <= 0:
+                    _timeText.text = "Ready !";
+                    _inventoryPlants.NumberSlowPlants += 1;
+                    _slowGrowTime = _seedMain.SlowSeed.GrowTime;
+                    Destroy(GameObject.Find("SlowSeed(Clone)"));
+                    _activatetime.SetActive(false);
+                    _dirt._slowSeedPlaced = false;
+                    break;
             }
         }
         else if (_dirt._moneySeedPlaced == true)
         {
-            _growTime += Time.deltaTime;
+            _activatetime.SetActive(true);
+            _moneyGrowTime -= Time.deltaTime;
 
-            if (_growTime >= _seedMain.MoneySeed.GrowTime)
+            switch (_moneyGrowTime)
             {
-                _inventoryPlants.NumberMoneyPlants += 1;
-                _growTime = 0;
-                Destroy(gameObject);
-                _dirt._moneySeedPlaced = false;
+                case > 0:
+                    float min = Mathf.FloorToInt(_moneyGrowTime / 60);
+                    float sec = Mathf.FloorToInt(_moneyGrowTime % 60);
+                    if (sec < 10)
+                    {
+                        _timeText.text = ($"0{min} : 0{sec}");
+                        return;
+                    }
+                    else
+                    {
+                        _timeText.text = ($"0{min} : {sec}");
+                    }
+                    break;
+                case <= 0:
+                    _timeText.text = "Ready !";
+                    _inventoryPlants.NumberMoneyPlants += 1;
+                    _moneyGrowTime = _seedMain.MoneySeed.GrowTime;
+                    Destroy(GameObject.Find("MoneySeed(Clone)"));
+                    _activatetime.SetActive(false);
+                    _dirt._moneySeedPlaced = false;
+                    break;
             }
         }
     }
