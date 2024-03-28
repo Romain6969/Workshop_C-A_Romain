@@ -3,7 +3,7 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// This script is to set the Inventory system.
+/// This script is to set the Inventory system of the seeds that the player receive after buying them in the store.
 /// </summary>
 
 public class Inventory : MonoBehaviour

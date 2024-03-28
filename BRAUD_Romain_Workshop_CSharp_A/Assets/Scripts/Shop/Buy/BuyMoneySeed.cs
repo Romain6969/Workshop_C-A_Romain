@@ -8,7 +8,10 @@ public class BuyMoneySeed : MonoBehaviour
 
     public void BuyMoney()
     {
-        _money.BuySomething(_seedMain.MoneySeed.Cost);
-        _inventory.NumberMoneySeed += 1;
+        if (_money.TotalMoney >= _seedMain.MoneySeed.Cost)
+        {
+            _money.BuySomething(_seedMain.MoneySeed.Cost);
+            _inventory.NumberMoneySeed += 1;
+        }   
     }
 }

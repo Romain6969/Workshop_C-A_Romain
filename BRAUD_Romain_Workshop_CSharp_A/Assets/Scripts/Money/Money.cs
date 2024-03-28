@@ -1,6 +1,10 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This Script is to set the Money of the player that he will gain by selling, or he will lose by buying.
+/// </summary>
+
 public class Money : MonoBehaviour
 {
     [field: SerializeField] public int TotalMoney { get; set;}
@@ -18,6 +22,6 @@ public class Money : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _textMoney.text = $"{TotalMoney}";
+        _textMoney.text = $"{TotalMoney} $";
     }
 }

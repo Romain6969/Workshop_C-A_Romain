@@ -8,7 +8,11 @@ public class BuyFastSeed : MonoBehaviour
 
     public void BuyFast()
     {
-        _money.BuySomething(_seedMain.FastSeed.Cost);
-        _inventory.NumberFastSeed += 1;
+        if (_money.TotalMoney >= _seedMain.FastSeed.Cost)
+        {
+            _money.BuySomething(_seedMain.FastSeed.Cost);
+            _inventory.NumberFastSeed += 1;
+        }
     }
+        
 }

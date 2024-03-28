@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f8938be01cf6a45bc4eadf92c4b11f, type: 3}
   m_Name: MoneySeed
   m_EditorClassIdentifier: 
-  <GrowTime>k__BackingField: 120
-  <Cost>k__BackingField: 200
-  <Gain>k__BackingField: 400
+  <GrowTime>k__BackingField: 80
+  <Cost>k__BackingField: 400
+  <Gain>k__BackingField: 800
   <Name>k__BackingField: Golden Seed

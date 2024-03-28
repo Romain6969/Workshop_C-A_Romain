@@ -7,6 +7,7 @@ using UnityEngine;
 public class Merchant : MonoBehaviour
 {
     [SerializeField] private GameObject _shopImage;
+    [field: SerializeField] public GameObject ButtonImage { get; set; }
 
     private void Awake()
     {
@@ -17,10 +18,17 @@ public class Merchant : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (Input.GetKey(KeyCode.R))
+            ButtonImage.SetActive(true);
+
+            if (Input.GetKey(KeyCode.E))
             {
+                ButtonImage.SetActive(false);
                 _shopImage.SetActive(true);
             }
+        }
+        else
+        {
+            ButtonImage.SetActive(false);
         }
     }
 }

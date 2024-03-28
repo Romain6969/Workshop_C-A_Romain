@@ -2,6 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This Script is for the player to choose wich seed he wants to plant.
+/// </summary>
+
 public class ChooseSeed : MonoBehaviour
 {
     [field: SerializeField] public int WichSeed { get; private set;}
@@ -13,6 +17,7 @@ public class ChooseSeed : MonoBehaviour
         _seedOutline[1].enabled = false;
         _seedOutline[2].enabled = false;
         _seedOutline[3].enabled = false;
+        WichSeed = 1;
     }
 
     private void FixedUpdate()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f8938be01cf6a45bc4eadf92c4b11f, type: 3}
   m_Name: NormalSeed
   m_EditorClassIdentifier: 
-  <GrowTime>k__BackingField: 30
+  <GrowTime>k__BackingField: 20
   <Cost>k__BackingField: 20
-  <Gain>k__BackingField: 15
+  <Gain>k__BackingField: 30
   <Name>k__BackingField: Typical Seed

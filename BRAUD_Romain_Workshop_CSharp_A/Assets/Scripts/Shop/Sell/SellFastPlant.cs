@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SellFastPlant : MonoBehaviour
@@ -10,7 +8,10 @@ public class SellFastPlant : MonoBehaviour
 
     public void SellFast()
     {
-        _money.SellSomething(_seedMain.FastSeed.Gain);
-        _inventoryPlants.NumberFastPlants -= 1;
+        if (_inventoryPlants.NumberFastPlants > 0)
+        {
+            _money.SellSomething(_seedMain.FastSeed.Gain);
+            _inventoryPlants.NumberFastPlants -= 1;
+        }
     }
 }

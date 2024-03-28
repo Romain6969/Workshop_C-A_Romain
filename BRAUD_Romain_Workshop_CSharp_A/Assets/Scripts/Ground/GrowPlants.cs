@@ -1,6 +1,10 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This Script is for the seeds, when the seeds are planted int the dirt, they will start growing and then the player can receive the plant.
+/// </summary>
+
 public class GrowPlants : MonoBehaviour
 {
     [SerializeField] private SeedMain _seedMain;
@@ -24,7 +28,7 @@ public class GrowPlants : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_dirt._normalSeedPlaced == true)
+        if (_dirt.NormalSeedPlaced == true)
         {
             _activatetime.SetActive(true);
             _normalGrowTime -= Time.deltaTime;
@@ -50,11 +54,11 @@ public class GrowPlants : MonoBehaviour
                     _normalGrowTime = _seedMain.NormalSeed.GrowTime;
                     Destroy(GameObject.Find("NormalSeed(Clone)"));
                     _activatetime.SetActive(false);
-                    _dirt._normalSeedPlaced = false;
+                    _dirt.NormalSeedPlaced = false;
                     break;
             }
         }
-        else if (_dirt._fastSeedPlaced == true)
+        else if (_dirt.FastSeedPlaced == true)
         {
             _activatetime.SetActive(true);
             _fastGrowTime -= Time.deltaTime;
@@ -80,11 +84,11 @@ public class GrowPlants : MonoBehaviour
                     _fastGrowTime = _seedMain.FastSeed.GrowTime;
                     Destroy(GameObject.Find("FastSeed(Clone)"));
                     _activatetime.SetActive(false);
-                    _dirt._fastSeedPlaced = false;
+                    _dirt.FastSeedPlaced = false;
                     break;
             }
         }
-        else if (_dirt._slowSeedPlaced == true)
+        else if (_dirt.SlowSeedPlaced == true)
         {
             _activatetime.SetActive(true);
             _slowGrowTime -= Time.deltaTime;
@@ -110,11 +114,11 @@ public class GrowPlants : MonoBehaviour
                     _slowGrowTime = _seedMain.SlowSeed.GrowTime;
                     Destroy(GameObject.Find("SlowSeed(Clone)"));
                     _activatetime.SetActive(false);
-                    _dirt._slowSeedPlaced = false;
+                    _dirt.SlowSeedPlaced = false;
                     break;
             }
         }
-        else if (_dirt._moneySeedPlaced == true)
+        else if (_dirt.MoneySeedPlaced == true)
         {
             _activatetime.SetActive(true);
             _moneyGrowTime -= Time.deltaTime;
@@ -140,7 +144,7 @@ public class GrowPlants : MonoBehaviour
                     _moneyGrowTime = _seedMain.MoneySeed.GrowTime;
                     Destroy(GameObject.Find("MoneySeed(Clone)"));
                     _activatetime.SetActive(false);
-                    _dirt._moneySeedPlaced = false;
+                    _dirt.MoneySeedPlaced = false;
                     break;
             }
         }

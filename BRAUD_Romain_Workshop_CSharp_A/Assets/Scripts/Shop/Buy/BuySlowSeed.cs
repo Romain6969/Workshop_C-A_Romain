@@ -8,7 +8,10 @@ public class BuySlowSeed : MonoBehaviour
 
     public void BuySlow()
     {
-        _money.BuySomething(_seedMain.SlowSeed.Cost);
-        _inventory.NumberSlowSeed += 1;
+        if(_money.TotalMoney >= _seedMain.SlowSeed.Cost)
+        {
+            _money.BuySomething(_seedMain.SlowSeed.Cost);
+            _inventory.NumberSlowSeed += 1;
+        }
     }
 }

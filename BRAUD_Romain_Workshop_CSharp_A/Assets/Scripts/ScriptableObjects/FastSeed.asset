@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f8938be01cf6a45bc4eadf92c4b11f, type: 3}
   m_Name: FastSeed
   m_EditorClassIdentifier: 
-  <GrowTime>k__BackingField: 15
+  <GrowTime>k__BackingField: 10
   <Cost>k__BackingField: 10
   <Gain>k__BackingField: 15
   <Name>k__BackingField: Small Seed

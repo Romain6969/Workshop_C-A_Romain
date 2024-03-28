@@ -1,7 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
+/// <summary>
+/// This Script is to set the inventory systeme for the plants that the player receive after planting the seeds. 
+/// </summary>
 
 public class InventoryPlants : MonoBehaviour
 {

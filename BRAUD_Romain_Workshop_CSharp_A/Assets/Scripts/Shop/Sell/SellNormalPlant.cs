@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SellNormalPlant : MonoBehaviour
@@ -10,7 +8,10 @@ public class SellNormalPlant : MonoBehaviour
 
     public void SellNormal()
     {
-        _money.SellSomething(_seedMain.NormalSeed.Gain);
-        _inventoryPlants.NumberNormalPlants -= 1;
+        if (_inventoryPlants.NumberNormalPlants > 0)
+        {
+            _money.SellSomething(_seedMain.NormalSeed.Gain);
+            _inventoryPlants.NumberNormalPlants -= 1;
+        }  
     }
 }
