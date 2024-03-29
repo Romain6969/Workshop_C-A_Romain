@@ -8,7 +8,14 @@ using UnityEngine.UI;
 
 public class ChooseSeed : MonoBehaviour
 {
+    /// <summary>
+    /// We create an int that will keep count of wich the player is selecting.
+    /// </summary>
     [field: SerializeField] public int WichSeed { get; private set;}
+
+    /// <summary>
+    /// We create a list of Outline so that the player can see, wich seed he is selecting (each outline represent a seed).
+    /// </summary>
     [SerializeField] private List<Outline> _seedOutline;
 
     private void Start()

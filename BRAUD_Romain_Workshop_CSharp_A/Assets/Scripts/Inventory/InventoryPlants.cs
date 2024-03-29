@@ -8,14 +8,44 @@ using TMPro;
 
 public class InventoryPlants : MonoBehaviour
 {
+    /// <summary>
+    /// We create a list of texts so that we can modify more easily the text that will show how many plants the player have.
+    /// </summary>
     [SerializeField] private List<TMP_Text> _numberPlantsText;
+
+    /// <summary>
+    /// We create a list of GameObjects so that we can activate them (show them to the player) when he at least obtain one plant.
+    /// </summary>
     [SerializeField] private List<GameObject> _uiPlants;
+
+    /// <summary>
+    /// We create a list of ints so that we can modify more easily the number of plants the player have.
+    /// </summary>
     [SerializeField] private List<int> _plants = new() { 0, 0, 0, 0 };
+
+    /// <summary>
+    /// We create an int that will represent the number of plants of "Typical Plants".
+    /// </summary>
     public int NumberNormalPlants { get; set; }
+
+    /// <summary>
+    /// We create an int that will represent the number of plants of "Small Plants".
+    /// </summary>
     public int NumberFastPlants { get; set; }
+
+    /// <summary>
+    /// We create an int that will represent the number of plants of "Heavy Plants".
+    /// </summary>
     public int NumberSlowPlants { get; set; }
+
+    /// <summary>
+    /// We create an int that will represent the number of plants of "Golden Plants".
+    /// </summary>
     public int NumberMoneyPlants { get; set; }
 
+    /// <summary>
+    /// We make sure that every UI are deactivated (not shown to the player).
+    /// </summary>
     private void Start()
     {
         _uiPlants[0].SetActive(false);

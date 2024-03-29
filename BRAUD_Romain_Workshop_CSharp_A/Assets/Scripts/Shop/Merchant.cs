@@ -6,7 +6,14 @@ using UnityEngine;
 
 public class Merchant : MonoBehaviour
 {
+    /// <summary>
+    /// This is for the UI of the Shop, so that when the player goes to the shop, the UI will appear.
+    /// </summary>
     [SerializeField] private GameObject _shopImage;
+
+    /// <summary>
+    /// This is for the player to know that he can access the shop when he is near it.
+    /// </summary>
     [field: SerializeField] public GameObject ButtonImage { get; set; }
 
     private void Awake()
@@ -22,7 +29,6 @@ public class Merchant : MonoBehaviour
 
             if (Input.GetKey(KeyCode.E))
             {
-                ButtonImage.SetActive(false);
                 _shopImage.SetActive(true);
             }
         }

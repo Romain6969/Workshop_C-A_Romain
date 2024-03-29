@@ -8,13 +8,40 @@ using TMPro;
 
 public class Inventory : MonoBehaviour
 {
+    /// <summary>
+    /// We create a list of texts so that we can modify more easily the text that will show how many seeds the player have.
+    /// </summary>
     [SerializeField] private List<TMP_Text> _numberSeedsText;
+
+    /// <summary>
+    /// We create a list of GameObjects so that we can activate them (show them to the player) when he at least obtain one seed.
+    /// </summary>
     [SerializeField] private List<GameObject> _uiSeeds;
+
+    /// <summary>
+    /// We create a list of ints so that we can modify more easily the number of seeds the player have.
+    /// </summary>
     [SerializeField] private List<int> _seeds = new() { 0, 0, 0, 0 };
-    [SerializeField]public int NumberNormalSeed {get; set;}
-    [SerializeField]public int NumberFastSeed {get; set;}
-    [SerializeField]public int NumberSlowSeed {get; set;}
-    [SerializeField]public int NumberMoneySeed {get; set;}
+
+    /// <summary>
+    /// We create an int that will represent the number of "Typical Seeds".
+    /// </summary>
+    public int NumberNormalSeed {get; set;}
+
+    /// <summary>
+    /// We create an int that will represent the number of "Small Seeds".
+    /// </summary>
+    public int NumberFastSeed {get; set;}
+
+    /// <summary>
+    /// We create an int that will represent the number of "Heavy Seeds".
+    /// </summary>
+    public int NumberSlowSeed {get; set;}
+
+    /// <summary>
+    /// We create an int that will represent the number of "Golden Seeds".
+    /// </summary>
+    public int NumberMoneySeed {get; set;}
 
     private void Start()
     {

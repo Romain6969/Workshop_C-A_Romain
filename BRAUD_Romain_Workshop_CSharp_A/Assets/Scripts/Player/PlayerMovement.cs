@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    /// <summary>
+    /// We create an int for the speed at wich the player will be moving.
+    /// </summary>
     [SerializeField] private int _speed;
 
     private void FixedUpdate()

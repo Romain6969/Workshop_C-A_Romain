@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScenes : MonoBehaviour
 {
+    /// <summary>
+    /// We create a string that is used to call wich scene the player have to go to.
+    /// </summary>
     [SerializeField] private string _scene;
     
     public void SceneChanger()

@@ -7,7 +7,14 @@ using TMPro;
 
 public class Money : MonoBehaviour
 {
+    /// <summary>
+    /// This represent the amount of money the player have.
+    /// </summary>
     [field: SerializeField] public int TotalMoney { get; set;}
+
+    /// <summary>
+    /// this represent the UI of the money.
+    /// </summary>
     [SerializeField] private TMP_Text _textMoney;
 
     public void BuySomething(int money)
